@@ -4,17 +4,19 @@
     {
         static void Main(string[] args)
         {
-            // Instanciando a String por medio del alias "string"
-            string cadena1 = ""; // 0 caracteres
-            string cadena2 = " "; // El 'espacio' representa un caracter
-            string cadena3 = "Hola mundo";
+            // Método Concat
+            string[] palabras = { "Hola", "a", "todos" };
 
-            char[] caracteres = { 'H', 'o', 'l', 'a' };
-            // Creando una instancia de String
-            String cadenaDeCaracteres = new string(caracteres);
+            string texto = string.Concat(palabras);
+            Console.WriteLine(texto);
 
-            // Imprimiendo la instancia
-            Console.WriteLine(cadenaDeCaracteres);
+            string palabra1 = "Hola", palabra2 = "a", palabra3 = "todos";
+            Console.WriteLine();
+            Console.WriteLine(string.Concat(palabra1, palabra2, palabra3));
+
+            // Método Join
+            string textoSeparado = string.Join("-", palabras);
+            Console.WriteLine(textoSeparado);
         }
     }
 }
