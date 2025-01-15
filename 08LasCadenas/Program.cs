@@ -4,20 +4,29 @@
     {
         static void Main(string[] args)
         {
-            // Inmutable -> No puede cambiar
-            string palabra1 = "Hola"; // Creamos un objeto y se lo asignamos a la referencia "palabra1"
-            string palabra2 = palabra1; // Creamos otra referencia (palabra2) que contiene al objeto de arriba
+            // Replace
+            string text = "hola mundo";
 
-            // Imprimimos el valor de ambas referencias
-            Console.WriteLine($"Referencia 1: {palabra1}");
-            Console.WriteLine($"Referencia 2: {palabra2}");
+            // Reemplazamos "hola" por "Hola" en una nueva cadena
+            string newText = text.Replace("hola", "Hola");
+            Console.WriteLine(text);
+            Console.WriteLine(newText);
 
-            palabra1 += " a todos";
 
-            Console.WriteLine("\nDespués de la concatenación\n");
-            // Imprimimos el valor de ambas referencias
-            Console.WriteLine($"Referencia 1: {palabra1}");
-            Console.WriteLine($"Referencia 2: {palabra2}");
+            // Trim
+            string text2 = "---Hola Mundo---";
+
+            string trimText2 = text2.Trim('-');
+            Console.WriteLine($"Sin con Trim: {text2}");
+            Console.WriteLine($"Texto con Trim: {trimText2}");
+
+            // Remove
+            string text3 = "Hola que tal";
+
+            // Quitamos la palabra "que"
+            string removeText3 = text3.Remove(5, 4);
+            Console.WriteLine(text);
+            Console.WriteLine(removeText3);
         }
     }
 }
