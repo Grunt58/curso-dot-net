@@ -4,19 +4,14 @@
     {
         static void Main(string[] args)
         {
-            // Método Concat
-            string[] palabras = { "Hola", "a", "todos" };
+            string parrafo = "Hola soy un párrafo en C#";
 
-            string texto = string.Concat(palabras);
-            Console.WriteLine(texto);
+            string[] palabras = parrafo.Split(' ');
 
-            string palabra1 = "Hola", palabra2 = "a", palabra3 = "todos";
-            Console.WriteLine();
-            Console.WriteLine(string.Concat(palabra1, palabra2, palabra3));
-
-            // Método Join
-            string textoSeparado = string.Join("-", palabras);
-            Console.WriteLine(textoSeparado);
+            foreach (string item in palabras)
+            {
+                Console.WriteLine($"Palabra sustraida: {item}");
+            }
         }
     }
 }
