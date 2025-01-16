@@ -6,24 +6,19 @@ namespace _08LasCadenas
     {
         static void Main(string[] args)
         {
-            Console.Write("Ingresa tu correo: ");
-            string correo = Console.ReadLine();
+            Console.WriteLine("Registro para nuevo ingreso:\n");
 
+            Console.Write("Ingreso tu nombre completo: ");
+            string nombre = Console.ReadLine();
 
-            Console.Write("Ingresa tu correo nuevamente: ");
-            string correoConfirmar = Console.ReadLine();
+            Console.Write("Ingresa tu correo electrónico: ");
+            string email = Console.ReadLine();
 
-            // Sin distinción de MAYÚSCULAS y minúsculas
-            bool coincideCorreo = correo.Equals(correoConfirmar, StringComparison.OrdinalIgnoreCase);    
-            
-            if (coincideCorreo)
-            {
-                Console.WriteLine("Registrado con éxito.");
-            }
-            else
-            {
-                Console.WriteLine("Error.");
-            }
+            Console.Clear();
+            Console.WriteLine("Verdifica tu información:\n");
+
+            Console.WriteLine($"Nombre: {nombre.ToUpper()}");
+            Console.WriteLine($"Nombre: {email.ToLower()}");
         }
     }
 }
