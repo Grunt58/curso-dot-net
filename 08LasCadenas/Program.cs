@@ -7,31 +7,15 @@ namespace _08LasCadenas
     {
         static void Main(string[] args)
         {
-            // Entero negativo (Primera cadena < Segunda cadena)
-            // Cero (Primera cadena == Segunda cadena)
-            // Entrero positivo (Primera cadena > Segunda cadena)
+            string cadena1 = "Hola a todos";
 
-            string cadena1 = "z";
-            string cadena2 = "ö";
+            Console.WriteLine(cadena1);
 
-            int ordenar;
+            // Después de PadLeft
+            Console.WriteLine(cadena1.PadLeft(15));
 
-            ordenar = String.Compare(cadena1, cadena2, new CultureInfo("de-DE"), CompareOptions.None);
-
-            switch (ordenar)
-            {
-                case -1:
-                    Console.WriteLine($"({cadena1}) es menor que ({cadena2}) según el criterio de ordenación");
-                    break;
-
-                case 0:
-                    Console.WriteLine($"({cadena1}) y ({cadena2}) son iguales según el criterio de ordenación");
-                    break;
-
-                case 1:
-                    Console.WriteLine($"({cadena1}) es mayor que ({cadena2}) seúng el criterio de ordenación");
-                    break;
-            }
+            // Después de PadRight
+            Console.WriteLine(cadena1.PadRight(15, '#'));
         }
     }
 }
