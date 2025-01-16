@@ -13,19 +13,10 @@ namespace _08LasCadenas
             Console.Write("Ingresa tu correo nuevamente: ");
             string correoConfirmar = Console.ReadLine();
 
-            // Equals de 2 parámetros
-            bool coincideCorreo = Equals(correo, correoConfirmar);        
+            // Sin distinción de MAYÚSCULAS y minúsculas
+            bool coincideCorreo = correo.Equals(correoConfirmar, StringComparison.OrdinalIgnoreCase);    
+            
             if (coincideCorreo)
-            {
-                Console.WriteLine("Registrado con éxito.");
-            }
-            else
-            {
-                Console.WriteLine("Error.");
-            }
-
-            // Equals de 1 parámetro
-            if (correo.Equals(correoConfirmar))
             {
                 Console.WriteLine("Registrado con éxito.");
             }
