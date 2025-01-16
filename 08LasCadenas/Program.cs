@@ -6,15 +6,33 @@ namespace _08LasCadenas
     {
         static void Main(string[] args)
         {
-            StringBuilder numeros = new StringBuilder();
-            for (int i = 1; i <= 100; i++)
+            Console.Write("Ingresa tu correo: ");
+            string correo = Console.ReadLine();
+
+
+            Console.Write("Ingresa tu correo nuevamente: ");
+            string correoConfirmar = Console.ReadLine();
+
+            // Equals de 2 parámetros
+            bool coincideCorreo = Equals(correo, correoConfirmar);        
+            if (coincideCorreo)
             {
-                numeros.Append(i);
-                numeros.Append(", ");
+                Console.WriteLine("Registrado con éxito.");
+            }
+            else
+            {
+                Console.WriteLine("Error.");
             }
 
-            string cadenaNumeros = numeros.ToString();
-            Console.WriteLine(cadenaNumeros);
+            // Equals de 1 parámetro
+            if (correo.Equals(correoConfirmar))
+            {
+                Console.WriteLine("Registrado con éxito.");
+            }
+            else
+            {
+                Console.WriteLine("Error.");
+            }
         }
     }
 }
