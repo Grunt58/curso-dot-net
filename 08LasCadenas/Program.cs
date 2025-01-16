@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 
 namespace _08LasCadenas
 {
@@ -6,19 +7,31 @@ namespace _08LasCadenas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Registro para nuevo ingreso:\n");
+            // Entero negativo (Primera cadena < Segunda cadena)
+            // Cero (Primera cadena == Segunda cadena)
+            // Entrero positivo (Primera cadena > Segunda cadena)
 
-            Console.Write("Ingreso tu nombre completo: ");
-            string nombre = Console.ReadLine();
+            string cadena1 = "z";
+            string cadena2 = "ö";
 
-            Console.Write("Ingresa tu correo electrónico: ");
-            string email = Console.ReadLine();
+            int ordenar;
 
-            Console.Clear();
-            Console.WriteLine("Verdifica tu información:\n");
+            ordenar = String.Compare(cadena1, cadena2, new CultureInfo("de-DE"), CompareOptions.None);
 
-            Console.WriteLine($"Nombre: {nombre.ToUpper()}");
-            Console.WriteLine($"Nombre: {email.ToLower()}");
+            switch (ordenar)
+            {
+                case -1:
+                    Console.WriteLine($"({cadena1}) es menor que ({cadena2}) según el criterio de ordenación");
+                    break;
+
+                case 0:
+                    Console.WriteLine($"({cadena1}) y ({cadena2}) son iguales según el criterio de ordenación");
+                    break;
+
+                case 1:
+                    Console.WriteLine($"({cadena1}) es mayor que ({cadena2}) seúng el criterio de ordenación");
+                    break;
+            }
         }
     }
 }
