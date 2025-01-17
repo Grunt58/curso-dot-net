@@ -17,9 +17,12 @@ namespace _08LasCadenas
             //Console.WriteLine($"El primer valor es: {numero1}, y el segundo valor es: {numero2}");
 
             //{expresiónDeInterpolación, alineación: cadenaDeFormato}
-            string nombre = "Luis";
-            int edad = 33;
-            Console.WriteLine($"Hola, soy {nombre,10} y tengo {edad} años");
+            int sueldo = 3500;
+            Console.WriteLine($"Mi sueldo es de {sueldo:N}");
+            Console.WriteLine($"Mi sueldo es de {sueldo:C}");
+            Console.WriteLine($"Mi sueldo es de {sueldo:F4}");
+            Console.WriteLine($"Mi sueldo es de {sueldo:C4}");
+
         }
     }
 }
