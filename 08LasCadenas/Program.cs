@@ -9,16 +9,12 @@ namespace _08LasCadenas
         {
             // CADENAS DE FORMATO
 
-            // Formato compuesto
+            // Interpolación de cadenas
+            // Carácter de cadenas interpolada $
             int numero1 = 5, numero2 = 10;
 
-            Console.WriteLine("El primer valor es: {0}, y el segundo valos es: {1}", numero1, numero2);
-
-            string cadena1;
-
-            // Convierte todo a una cadena
-            cadena1 = String.Format("El valor es: {0}", numero1);
-            Console.WriteLine(cadena1);
+            // Una "literal de cadena entre comillas", es la típica cadena encerrada entre comillas dobles.
+            Console.WriteLine($"El primer valor es: {numero1}, y el segundo valor es: {numero2}");
         }
     }
 }
