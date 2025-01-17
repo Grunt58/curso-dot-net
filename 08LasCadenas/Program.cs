@@ -16,6 +16,7 @@ namespace _08LasCadenas
 
             string cadena1;
 
+            // Convierte todo a una cadena
             cadena1 = String.Format("El valor es: {0}", numero1);
             Console.WriteLine(cadena1);
         }
