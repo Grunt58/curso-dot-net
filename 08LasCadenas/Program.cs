@@ -17,12 +17,18 @@ namespace _08LasCadenas
             //Console.WriteLine($"El primer valor es: {numero1}, y el segundo valor es: {numero2}");
 
             //{expresiónDeInterpolación, alineación: cadenaDeFormato}
-            int sueldo = 3500;
-            Console.WriteLine($"Mi sueldo es de {sueldo:N}");
-            Console.WriteLine($"Mi sueldo es de {sueldo:C}");
-            Console.WriteLine($"Mi sueldo es de {sueldo:F4}");
-            Console.WriteLine($"Mi sueldo es de {sueldo:C4}");
 
+            int numero = 35000;
+            Console.WriteLine($"El valor es: {numero:0000000}");
+            Console.WriteLine($"El valor es: {numero:0000000.00}");
+            Console.WriteLine($"El valor es: {numero:0,0}");
+
+            var numero2 = 35000.3456;
+            Console.WriteLine($"El valor es: {numero2:0.0}");
+            Console.WriteLine($"El valor es: {numero2:000000,0.00}");
+
+            var numero3 = 112233;
+            Console.WriteLine($"El valor es: {numero3:##-##-##}");
         }
     }
 }
