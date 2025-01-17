@@ -7,16 +7,23 @@ namespace _08LasCadenas
     {
         static void Main(string[] args)
         {
-            // Declarando un objeto DateTime
+            DateTime fechaHora = new DateTime(2002, 1, 5, 13, 54, 10);
+            Console.WriteLine($"El valor del objketo DateTime es: {fechaHora}");
 
-            DateTime fechaHoraPredeterminados = new DateTime();
-            DateTime fecha = new DateTime(2004, 01, 23);
-            DateTime fechaHora = new DateTime(2001, 06, 15, 23, 11, 5);
+            // Convirtiendo el objeto DateTime en una cadena
+            string cadenaFechaHora = fechaHora.ToString("d");
 
+            // Imprimiendo la representación en cadena del objeto DateTime según la referencia cultural actual (es-MX)
+            Console.WriteLine($"La representación en cadena (d) es: {cadenaFechaHora}");
 
-            Console.WriteLine(fechaHoraPredeterminados);
-            Console.WriteLine(fecha);
-            Console.WriteLine(fechaHora);
+            cadenaFechaHora = fechaHora.ToString("D");
+            Console.WriteLine($"La representación en cadena (D) es: {cadenaFechaHora}");
+
+            cadenaFechaHora = fechaHora.ToString("f");
+            Console.WriteLine($"La representación en cadena (f) es: {cadenaFechaHora}");
+
+            cadenaFechaHora = fechaHora.ToString("F");
+            Console.WriteLine($"La representación en cadena (F) es: {cadenaFechaHora}");
         }
     }
 }
