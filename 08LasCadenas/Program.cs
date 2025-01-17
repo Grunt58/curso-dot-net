@@ -12,25 +12,19 @@ namespace _08LasCadenas
 
             // Convirtiendo el objeto DateTime en una cadena
             // Especificadores de formato personalizado: ("d", "f", "F", "g", "h", "H", "K", "m", "M", "s", "t", "y", "z", ":" o "/")
-            string cadenaFechaHora = fechaHora.ToString("%d");
+            string cadenaFechaHora = fechaHora.ToString("ddd dd MMMM yyyy h:m:s tt");
 
             // Imprimiendo la representación en cadena del objeto DateTime según la referencia cultural actual (es-MX)
-            Console.WriteLine($"La representación en cadena (%d) es: {cadenaFechaHora}");
-
-            cadenaFechaHora = fechaHora.ToString("ddd");
-            Console.WriteLine($"La representación en cadena (ddd) es: {cadenaFechaHora}");
-
-            cadenaFechaHora = fechaHora.ToString("ddd dd");
-            Console.WriteLine($"La representación en cadena (ddd dd) es: {cadenaFechaHora}");
-
-            cadenaFechaHora = fechaHora.ToString("ddd dd MMMM");
-            Console.WriteLine($"La representación en cadena (ddd dd MMMM) es: {cadenaFechaHora}");
-
-            cadenaFechaHora = fechaHora.ToString("ddd dd MMMM yyyy");
-            Console.WriteLine($"La representación en cadena (ddd dd MMMM yyyy) es: {cadenaFechaHora}");
-
-            cadenaFechaHora = fechaHora.ToString("ddd dd MMMM yyyy h m tt");
             Console.WriteLine($"La representación en cadena (ddd dd MMMM yyyy h m tt) es: {cadenaFechaHora}");
+
+            cadenaFechaHora = fechaHora.ToString("ddd dd/MM/yy h:m:s tt");
+            Console.WriteLine($"La representación en cadena (ddd dd/MM/yy h m tt) es: {cadenaFechaHora}");
+
+            cadenaFechaHora = fechaHora.ToString("ddd dd \\de MMMM \\de yyyy h:m:s tt");
+            Console.WriteLine($"La representación en cadena (ddd dd \\de MMMM \\de yyyy h:m:s tt) es: {cadenaFechaHora}");
+
+            cadenaFechaHora = fechaHora.ToString("ddd dd \"de\" MMMM \"de\" yyyy h:m:s tt");
+            Console.WriteLine($"La representación en cadena (ddd dd \"de\" MMMM \"de\" yyyy h:m:s tt) es: {cadenaFechaHora}");
         }
     }
 }
