@@ -7,28 +7,28 @@ namespace _08LasCadenas
     {
         static void Main(string[] args)
         {
-            //// CADENAS DE FORMATO
+            // Literales de cadena entre comillas
+            string cadena1 = "Hola a todos";
 
-            //// Interpolación de cadenas
-            //// Carácter de cadenas interpolada $
-            //int numero1 = 5, numero2 = 10;
+            // Literal de cadena textual
+            // Carácter "identificador textual" @
 
-            //// Una "literal de cadena entre comillas", es la típica cadena encerrada entre comillas dobles.
-            //Console.WriteLine($"El primer valor es: {numero1}, y el segundo valor es: {numero2}");
+            string rutaDirectorio = @"C:\Windows\Fonts";
 
-            //{expresiónDeInterpolación, alineación: cadenaDeFormato}
+            string cadena2 = @"La aclamada serie ""Breaking Bad"" ganó tres premios Emmy";
 
-            int numero = 35000;
-            Console.WriteLine($"El valor es: {numero:0000000}");
-            Console.WriteLine($"El valor es: {numero:0000000.00}");
-            Console.WriteLine($"El valor es: {numero:0,0}");
+            // Para escribir una cadena de varias líneas
+            string cadena3 = @"Este es un mensaje
+                              Hola a todos 
+                              Hola otra vez";
 
-            var numero2 = 35000.3456;
-            Console.WriteLine($"El valor es: {numero2:0.0}");
-            Console.WriteLine($"El valor es: {numero2:000000,0.00}");
+            Console.WriteLine(rutaDirectorio);
+            Console.WriteLine(cadena2);
+            Console.WriteLine(cadena3);
 
-            var numero3 = 112233;
-            Console.WriteLine($"El valor es: {numero3:##-##-##}");
+            // Keyword: int, for, double, switch, etc...
+
+            int @int;
         }
     }
 }
