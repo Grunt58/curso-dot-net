@@ -7,28 +7,16 @@ namespace _08LasCadenas
     {
         static void Main(string[] args)
         {
-            // Literales de cadena entre comillas
-            string cadena1 = "Hola a todos";
+            // Declarando un objeto DateTime
 
-            // Literal de cadena textual
-            // Carácter "identificador textual" @
+            DateTime fechaHoraPredeterminados = new DateTime();
+            DateTime fecha = new DateTime(2004, 01, 23);
+            DateTime fechaHora = new DateTime(2001, 06, 15, 23, 11, 5);
 
-            string rutaDirectorio = @"C:\Windows\Fonts";
 
-            string cadena2 = @"La aclamada serie ""Breaking Bad"" ganó tres premios Emmy";
-
-            // Para escribir una cadena de varias líneas
-            string cadena3 = @"Este es un mensaje
-                              Hola a todos 
-                              Hola otra vez";
-
-            Console.WriteLine(rutaDirectorio);
-            Console.WriteLine(cadena2);
-            Console.WriteLine(cadena3);
-
-            // Keyword: int, for, double, switch, etc...
-
-            int @int;
+            Console.WriteLine(fechaHoraPredeterminados);
+            Console.WriteLine(fecha);
+            Console.WriteLine(fechaHora);
         }
     }
 }
