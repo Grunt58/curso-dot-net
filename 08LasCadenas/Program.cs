@@ -11,19 +11,26 @@ namespace _08LasCadenas
             Console.WriteLine($"El valor del objketo DateTime es: {fechaHora}");
 
             // Convirtiendo el objeto DateTime en una cadena
-            string cadenaFechaHora = fechaHora.ToString("d");
+            // Especificadores de formato personalizado: ("d", "f", "F", "g", "h", "H", "K", "m", "M", "s", "t", "y", "z", ":" o "/")
+            string cadenaFechaHora = fechaHora.ToString("%d");
 
             // Imprimiendo la representación en cadena del objeto DateTime según la referencia cultural actual (es-MX)
-            Console.WriteLine($"La representación en cadena (d) es: {cadenaFechaHora}");
+            Console.WriteLine($"La representación en cadena (%d) es: {cadenaFechaHora}");
 
-            cadenaFechaHora = fechaHora.ToString("D");
-            Console.WriteLine($"La representación en cadena (D) es: {cadenaFechaHora}");
+            cadenaFechaHora = fechaHora.ToString("ddd");
+            Console.WriteLine($"La representación en cadena (ddd) es: {cadenaFechaHora}");
 
-            cadenaFechaHora = fechaHora.ToString("f");
-            Console.WriteLine($"La representación en cadena (f) es: {cadenaFechaHora}");
+            cadenaFechaHora = fechaHora.ToString("ddd dd");
+            Console.WriteLine($"La representación en cadena (ddd dd) es: {cadenaFechaHora}");
 
-            cadenaFechaHora = fechaHora.ToString("F");
-            Console.WriteLine($"La representación en cadena (F) es: {cadenaFechaHora}");
+            cadenaFechaHora = fechaHora.ToString("ddd dd MMMM");
+            Console.WriteLine($"La representación en cadena (ddd dd MMMM) es: {cadenaFechaHora}");
+
+            cadenaFechaHora = fechaHora.ToString("ddd dd MMMM yyyy");
+            Console.WriteLine($"La representación en cadena (ddd dd MMMM yyyy) es: {cadenaFechaHora}");
+
+            cadenaFechaHora = fechaHora.ToString("ddd dd MMMM yyyy h m tt");
+            Console.WriteLine($"La representación en cadena (ddd dd MMMM yyyy h m tt) es: {cadenaFechaHora}");
         }
     }
 }
