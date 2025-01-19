@@ -101,7 +101,8 @@ namespace _08LasCadenas
         public string GenerarContraseña()
         {
             // Aquí guardaremos la contraseña
-            string contraseñaGenerada = "";
+            //string contraseñaGenerada = "";
+            StringBuilder contraseñaGeneradaSB = new StringBuilder();
 
             // Instanciamos a la clase Random para usarla más adelante
             Random random = new Random();
@@ -118,7 +119,7 @@ namespace _08LasCadenas
             char caracterEscogido;
 
             // Usamos una iteración while para ir colocando un carácter (de los 4 del grupo) hasta que completemos la longitud que se estableció anteriormente
-            while (contraseñaGenerada.Length < longtudContraseña)
+            while (contraseñaGeneradaSB.Length < longtudContraseña)
             {
                 // Volvemos a usar un número aleatorio, esta vez para seleccionar uno de los 4 grupos de string que tenemos
                 switch (random.Next(0, 4))
@@ -134,7 +135,7 @@ namespace _08LasCadenas
                              */
                             caracterEscogido = numeros[random.Next(numeros.Length)];
                             // Se le acumula el carácter escogido por Random a la contraseña generada
-                            contraseñaGenerada += caracterEscogido;
+                            contraseñaGeneradaSB.Append(caracterEscogido);
                             // Se acumula en 1 a los caracteres numéricos que contiene la contraseña
                             numContiene++;
                         }
@@ -144,7 +145,7 @@ namespace _08LasCadenas
                         if (minContiene < minTener)
                         {
                             caracterEscogido = letrasMin[random.Next(letrasMin.Length)];
-                            contraseñaGenerada += caracterEscogido;
+                            contraseñaGeneradaSB.Append(caracterEscogido);
                             minContiene++;
                         }
                         break;
@@ -153,7 +154,7 @@ namespace _08LasCadenas
                         if (mayContiene < mayTener)
                         {
                             caracterEscogido = letrasMay[random.Next(letrasMay.Length)];
-                            contraseñaGenerada += caracterEscogido;
+                            contraseñaGeneradaSB.Append(caracterEscogido);
                             mayContiene++;
                         }
                     break;
@@ -162,13 +163,13 @@ namespace _08LasCadenas
                         if (espContiene < espTener)
                         {
                             caracterEscogido = caracterEspecial[random.Next(caracterEspecial.Length)];
-                            contraseñaGenerada += caracterEscogido;
+                            contraseñaGeneradaSB.Append(caracterEscogido);
                             espContiene++;
                         }
                      break;
                 }
             }
-            return contraseñaGenerada;
+            return contraseñaGeneradaSB.ToString();
         }
 
         // Método para comprobar contraseña
