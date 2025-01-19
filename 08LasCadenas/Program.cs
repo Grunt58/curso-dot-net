@@ -8,27 +8,22 @@ namespace _08LasCadenas
     {
         static void Main(string[] args)
         {
-            // Introducir una cadena de caracteres e indicar si es un palíndromo. Una palabra palíndroma es aquella que se lee igual adelante que atrás. Por ejemplo: ojo, rayar, solos, rapar, rotomotor, sedes.
+            // Hacer un programa que le pida al ususario la fecha de su nacimiento, y nosotros le diremos que día de la semana era.
 
-            string palabraUsuario, palabraInvertida = "";
+            // Variables necesarias
 
-            // Pedimos la palabra
-            Console.Write("Ingresa una palabra y veamos si es un palíndromo: ");
-            palabraUsuario = Console.ReadLine();
+            string cadenaFechaNacimiento;
+            DateTime dateTimeFechaNacimiento;
 
-            foreach (char letra in palabraUsuario)
-            {
-                palabraInvertida = letra + palabraInvertida;
-            }
+            // Pedimos la fecha de nacimiento
+            Console.Write("Dime la decha de tu nacimiento (día, mes y año) y te diré que día de la semana era: ");
+            cadenaFechaNacimiento = Console.ReadLine();
 
-            if (palabraUsuario.Equals(palabraInvertida, StringComparison.OrdinalIgnoreCase))
-            {
-                Console.WriteLine($"\"{palabraUsuario}\" es una palabra palíndroma");
-            }
-            else
-            {
-                Console.WriteLine($"\"{palabraUsuario}\" no es una palabra palíndroma");
-            }
+            // Convertimos la cadena en un objeto DateTime
+            dateTimeFechaNacimiento = DateTime.Parse(cadenaFechaNacimiento);
+
+            // Aplicamos formato de fecha personalizado ("dddd") para mostrar el día de la semana
+            Console.WriteLine($"Naciste un {dateTimeFechaNacimiento.ToString("dddd")}");
         }
     }
 }
