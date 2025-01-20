@@ -7,4 +7,14 @@
             Console.WriteLine("Hello, World!");
         }
     }
+
+    struct Alumno
+    {
+        // Campos
+        string nombre;
+        string apellidos;
+        double calificacion;
+        bool alergias;
+        string numeroTelefono;
+    }
 }
