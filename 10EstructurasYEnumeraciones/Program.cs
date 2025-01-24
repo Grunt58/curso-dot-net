@@ -4,35 +4,35 @@
     {
         static void Main(string[] args)
         {
-            // Instanciamos a la estructura
-            Alumno alumno1 = new Alumno();
+            // Conjunto de datos pequeños y específicos
+            // Datos formen parte de un objeto aún más grandes
 
-            // Asignandole valor a un campo
-            alumno1.Nombre = "Luis";
-            // Mostrando el valor del campo "nombre"
-            Console.WriteLine($"El nombre del alumno es: {alumno1.Nombre}");
+            Transferencia transferencia1 = new Transferencia();
+            transferencia1.fecha = DateTime.Now;
+            transferencia1.monto = 1000;
+            transferencia1.destinatario = "José Enrique";
+            transferencia1.numeroCuenta = "3498309888";
+            transferencia1.concepto = "Pago del préstamo";
 
-            // Instanciamos nuevamente a la estructura
-            Alumno alumno2 = alumno1;
-
-            // Asignandole un nuevo valor al campo "nombre"
-            alumno1.Nombre = "Eric";
-
-            // Mostrando el valor del campo "nombre" para ambas instancias
-            Console.WriteLine($"El nombre del alumno en la primera instancia es : {alumno1.Nombre}, y en la segunda instancia es: {alumno2.Nombre}");
+            Console.WriteLine(transferencia1.ToString());
         }
     }
 
-    class Alumno
+    struct Transferencia
     {
-        // Campos
-        string nombre;
-        string apellido;
-        double calificacion;
-        bool alergias;
-        string numeroTelefono;
+        public DateTime fecha;
+        public double monto;
+        public string destinatario;
+        public string numeroCuenta;
+        public string concepto;
 
-        // Creamos una propiedad para Nombre
-        public string Nombre { get => nombre; set => nombre = value; } 
+        public override string ToString()
+        {
+            string mensaje;
+
+            mensaje = $"Fecha: {fecha.ToString()} \nMonto: ${monto} \nDestinatario: {destinatario} \nNúmero de cuenta: {numeroCuenta} \nConcepto: {concepto}";
+
+            return mensaje;
+        }
     }
 }
