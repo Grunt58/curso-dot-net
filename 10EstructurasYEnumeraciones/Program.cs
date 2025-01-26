@@ -4,28 +4,37 @@
     {
         static void Main(string[] args)
         {
-            Empresa empresa1 = new Empresa();
+            // Instanciamos a ListaReproduccion
+            ListaReproduccion listaReproduccion1 = new ListaReproduccion();
+
+            // Nombramos la lista
+            listaReproduccion1.Nombre = "Clasicos";
         }
     }
 
-    // Estructura anidada incrustada
-    struct EstructuraPrincipal
+    struct Cancion
     {
-        struct EstructuraAnidada
-        {
+        // Campos
+        string titulo;
+        string artista;
+        int duracion;
 
-        }
+        // Propiedades
+        public string Titulo { get => titulo; set => titulo = value; }
+        public string Artista { get => artista; set => artista = value; }
+        public int Duracion { get => duracion; set => duracion = value; }
     }
 
-    // Estructura anidada separada
-    struct Empleado
+    struct ListaReproduccion
     {
+        // Campos
+        string nombre;
 
-    }
+        // Propiedades
+        public string Nombre { get => nombre; set => nombre = value; }
 
-    struct Empresa
-    {
-        // Usamos una estructura como miembro de otra, esto también es una estructura anidada (separada)
-        Empleado empleado1;
+        // Anidamos a la struct "Cancion"
+        public Cancion cancion1;
+        public Cancion cancion2;
     }
 }
