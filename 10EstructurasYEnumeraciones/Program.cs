@@ -6,7 +6,20 @@ namespace _10EstructurasYEnumeraciones
     {
         static void Main(string[] args)
         {
+            // Declaramos una variable del tipo del enum
+            // Variables enumeradas, variable de enumeración, variables de tipo enumerado
+            Semana diaDePago = Semana.Viernes;
 
+            // Ejemplo de uso en una estructura de control
+            if (diaDePago == Semana.Viernes)
+            {
+                double sueldoSemana1 = 3500;
+                Console.WriteLine($"Hoy es dia de pago, recibes: ${sueldoSemana1}");
+            }
+            else
+            {
+                Console.WriteLine("Lo sentimos, hoy no es día de pago.");
+            }
         }
     }
 
