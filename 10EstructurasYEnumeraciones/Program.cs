@@ -1,35 +1,58 @@
-﻿namespace _10EstructurasYEnumeraciones
+﻿using System.Linq.Expressions;
+
+namespace _10EstructurasYEnumeraciones
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            // Creamos y asignamos instnacias a la matriz en una sola sintaxis
-            Producto[] televisiones = new Producto[]
-            {
-                new Producto { Nombre = "Samsung Neo", Precio = 25000.0, Descripcion = "Televisor OLED de 55 pulgadas" },
-                new Producto { Nombre = "LG Smart TV", Precio = 19000.0, Descripcion = "Televisor Smart de 50 pulgadas" },
-                new Producto { Nombre = "sony Bravia", Precio = 22000.0, Descripcion = "Televisor OLED de 65 pulgadas" }
+            // Creamos un estudiante
+            Estudiante estudiante1 = new Estudiante();
+
+            // Le asignamos nomre y apellido
+            estudiante1.Nombre = "Luis";
+            estudiante1.Apellido = "Dominguez";
+
+            // Creamos la matriz
+            Calificacion[] calificaciones = {
+                new Calificacion { Materia = "Matemáticas", Puntaje = 9},
+                new Calificacion { Materia = "Historia", Puntaje = 8.5 },
+                new Calificacion { Materia = "Física", Puntaje = 7 }
             };
 
-            // Mostrando la información de los elementos de la matriz
-            foreach (Producto item in televisiones)
+            // Asignamos la matriz "calificaciones" a nuestro estudiante1
+            estudiante1.Calificaciones = calificaciones;
+
+            // Mostrar los datos del estudiante y sus calificaciones
+            Console.WriteLine($"Nombre: {estudiante1.Nombre} {estudiante1.Apellido}");
+            foreach (Calificacion item in estudiante1.Calificaciones)
             {
-                // Accede a las propiedades de cada instancia de Producto
-                Console.WriteLine($"Nombre: {item.Nombre}\nPrecio: {item.Precio}\nDescripción: {item.Descripcion}\n");
+                Console.WriteLine($"{item.Materia} = {item.Puntaje}");
             }
         }
     }
 
-    struct Producto
+    struct Calificacion
+    {
+        // Campos
+        string materia;
+        double puntaje;
+
+        // Propiedades
+        public string Materia { get => materia; set => materia = value; }
+        public double Puntaje { get => puntaje; set => puntaje = value; }
+    }
+
+    struct Estudiante
     {
         // Campos
         string nombre;
-        double precio;
-        string descripcion;
+        string apellido;
+        Calificacion[] calificaciones;
 
+        // Campos
         public string Nombre { get => nombre; set => nombre = value; }
-        public double Precio { get => precio; set => precio = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-    }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public Calificacion[] Calificaciones { get => calificaciones; set => calificaciones = value; }
+    } 
 }
