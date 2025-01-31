@@ -6,17 +6,17 @@ namespace _10EstructurasYEnumeraciones
     {
         static void Main(string[] args)
         {
-            // Declaramos una variable de tipo "Type" y le asignamos nuestra enumeración
-            Type tipoEnumeracion = typeof(Continentes);
+            //// Declaramos una variable de tipo "Type" y le asignamos nuestra enumeración
+            //Type tipoEnumeracioan = typeof(Continentes);
 
-            // Matroz para almacenar la devolución de "GetValues"
-            Continentes[] constantesContientes;
+            //// Matriz para almacenar la devolución de "GetValues"
+            //Continentes[] constantesContientes;
 
-            // Le asignamos la devolución del método "GetValues" a nuestra matriz "constantesContientes"
-            constantesContientes = (Continentes[])Enum.GetValues(tipoEnumeracion);
+            //// Le asignamos la devolución del método "GetValues" a nuestra matriz "constantesContientes"
+            //constantesContientes = (Continentes[])Enum.GetValues(typeof(Continentes));
 
             // Recorremos a la matriz
-            foreach (Continentes item in constantesContientes)
+            foreach (Continentes item in Enum.GetValues(typeof(Continentes)))
             {
                 Console.WriteLine(item);
             }
