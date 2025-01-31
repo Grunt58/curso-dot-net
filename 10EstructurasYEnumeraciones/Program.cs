@@ -6,29 +6,41 @@ namespace _10EstructurasYEnumeraciones
     {
         static void Main(string[] args)
         {
-            //// Declaramos una variable de tipo "Type" y le asignamos nuestra enumeración
-            //Type tipoEnumeracioan = typeof(Continentes);
+            int a = 10, b = 2;
+            // Variable que va a guardar la opción del menú
+            OpcionesMenu opcion;
 
-            //// Matriz para almacenar la devolución de "GetValues"
-            //Continentes[] constantesContientes;
+            Console.WriteLine("[1]: Suma");
+            Console.WriteLine("[2]: Resta");
+            Console.WriteLine("[3]: Multiplicacion");
+            Console.WriteLine("[4]: División");
 
-            //// Le asignamos la devolución del método "GetValues" a nuestra matriz "constantesContientes"
-            //constantesContientes = (Continentes[])Enum.GetValues(typeof(Continentes));
+            Console.Write("Elige una opción: ");
+            opcion = (OpcionesMenu)Enum.Parse(typeof(OpcionesMenu), Console.ReadLine());
 
-            // Recorremos a la matriz
-            foreach (Continentes item in Enum.GetValues(typeof(Continentes)))
+            switch (opcion)
             {
-                Console.WriteLine(item);
+                case OpcionesMenu.Suma:
+                    Console.WriteLine($"{a} + {b} = {a + b}");
+                    break;
+                case OpcionesMenu.Resta:
+                    Console.WriteLine($"{a} - {b} = {a - b}");
+                    break;
+                case OpcionesMenu.Multiplicacion:
+                    Console.WriteLine($"{a} * {b} = {a * b}");
+                    break;
+                case OpcionesMenu.Division:
+                    Console.WriteLine($"{a} / {b} = {a / b}");
+                    break;
             }
         }
     }
 
-    enum Continentes
+    enum OpcionesMenu
     {
-        Africa,
-        America,
-        Asia,
-        Europa,
-        Oceania
+        Suma = 1,
+        Resta,
+        Multiplicacion,
+        Division
     }
 }
