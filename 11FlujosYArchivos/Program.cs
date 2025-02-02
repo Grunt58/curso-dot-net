@@ -30,6 +30,24 @@ namespace _11FlujosYArchivos
 
             // Mostrando la capacidad, longitud y posición del puntero del stream
             InformacionStream(ms1);
+
+            // Cambiamos la posición del puntero
+            ms1.Seek(-4, SeekOrigin.End);
+
+            // Mostramos la posición del puntero
+            Console.WriteLine($"\tLa nueva posición del puntero después de usar Seek, es: {ms1.Position}\n");
+
+            // Creamos una nueva matriz de bytes para que guarde la codificación de una cadena
+            byte[] nuevaMatrizCadenaByte = Encoding.UTF8.GetBytes("llena");
+
+            // Escribimos la nueva cadena ya codificada en el flujo
+            ms1.Write(nuevaMatrizCadenaByte, 0, nuevaMatrizCadenaByte.Length);
+
+            // Indicamos que ya fue escrita la segunda cadena
+            Console.WriteLine("Después de escribir la segunda cadena...");
+
+            // Mostramos la capacidad, longitud,y posición del puntero del stream
+            InformacionStream(ms1);
         }
 
         static void InformacionStream(MemoryStream ms1Pa)
