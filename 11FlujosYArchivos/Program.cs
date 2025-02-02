@@ -13,41 +13,32 @@ namespace _11FlujosYArchivos
             // Mostrando la capacidad, longitud y posición del puntero del stream
             InformacionStream(ms1);
 
-            // Le pedimos al ususario una cadena para guardar en el stream
-            Console.Write("Ingresa un texto para guardarlo en el stream: ");
-            string cadena1 = Console.ReadLine();
-
+            // Matriz de bytes para guardar a la cadena convertida
             byte[] matrizCadenaByte;
 
-            // Codificar: string -> secuencia de bytes
-            // Descodificar: secuencia de bytes -> string
 
             // Codificamos a cadena1 para obtener una secuenda de bytes
-            matrizCadenaByte = Encoding.UTF8.GetBytes(cadena1);
+            matrizCadenaByte = Encoding.UTF8.GetBytes("Hola a todos");
 
             // Escribiendo datos en el flujo
             ms1.Write(matrizCadenaByte, 0, matrizCadenaByte.Length);
 
+            // Mensaje para separar el antes y despupes del write
+            Console.WriteLine("Después de escribir en el stream...");
             // Mostrando la capacidad, longitud y posición del puntero del stream
             InformacionStream(ms1);
 
-            // Cambiamos la posición del puntero
-            ms1.Seek(-4, SeekOrigin.End);
+            // Búfer para almacenar los bytes leídos por Read
+            byte[] buferBytesLeidos = new byte[100];
 
-            // Mostramos la posición del puntero
-            Console.WriteLine($"\tLa nueva posición del puntero después de usar Seek, es: {ms1.Position}\n");
+            ms1.Seek(0, SeekOrigin.Begin); // Mover el puntero al inicio del flujo
 
-            // Creamos una nueva matriz de bytes para que guarde la codificación de una cadena
-            byte[] nuevaMatrizCadenaByte = Encoding.UTF8.GetBytes("llena");
+            // Leemos el contenido de nuestro flujo usando el método Read
+            int bytesLeidos = ms1.Read(buferBytesLeidos, 0, (int)ms1.Length);
 
-            // Escribimos la nueva cadena ya codificada en el flujo
-            ms1.Write(nuevaMatrizCadenaByte, 0, nuevaMatrizCadenaByte.Length);
+            // Mostramos cuántos bytes fueron leídos por Read
+            Console.WriteLine($"Bytes leídos del stream: {bytesLeidos}");
 
-            // Indicamos que ya fue escrita la segunda cadena
-            Console.WriteLine("Después de escribir la segunda cadena...");
-
-            // Mostramos la capacidad, longitud,y posición del puntero del stream
-            InformacionStream(ms1);
         }
 
         static void InformacionStream(MemoryStream ms1Pa)
