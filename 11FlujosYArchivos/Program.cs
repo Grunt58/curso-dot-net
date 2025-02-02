@@ -44,6 +44,9 @@ namespace _11FlujosYArchivos
 
             // Mostramos la cadena descodificada
             Console.WriteLine($"Información obtenida del stream: \"{cadenaDescodificada}\"");
+
+            // Cerramos el flujo
+            ms1.Close();
         }
 
         static void InformacionStream(MemoryStream ms1Pa)
