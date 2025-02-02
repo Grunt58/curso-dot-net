@@ -39,6 +39,11 @@ namespace _11FlujosYArchivos
             // Mostramos cuántos bytes fueron leídos por Read
             Console.WriteLine($"Bytes leídos del stream: {bytesLeidos}");
 
+            // Descodificamos la matriz de bytes leida para convertirla en un string
+            string cadenaDescodificada = Encoding.UTF8.GetString(buferBytesLeidos);
+
+            // Mostramos la cadena descodificada
+            Console.WriteLine($"Información obtenida del stream: \"{cadenaDescodificada}\"");
         }
 
         static void InformacionStream(MemoryStream ms1Pa)
