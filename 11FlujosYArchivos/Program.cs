@@ -7,23 +7,15 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            string origenDirectorio = @"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0\Mi segunda carpeta\Mi tercera carpeta";
-            string destinoDirectorio = @"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0\Mi tercera carpeta";
-            if (Directory.Exists(origenDirectorio))
-            {
-                if (!Directory.Exists(destinoDirectorio))
-                {
-                    Directory.Move(origenDirectorio, destinoDirectorio);
-                }
-                else
-                {
-                    Console.WriteLine("El directorio de destino ya existe");
-                }
+            string directorio = @"C:\Users\fredd\Desktop\Carpeta en el escritorio";
 
+            if (Directory.Exists(directorio))
+            {
+                Directory.Delete(directorio);
             }
             else
             {
-                Console.WriteLine("Directorio de origen no fue encontrado");
+                Console.WriteLine("Directorio no encontrado");
             }
         }
     }
