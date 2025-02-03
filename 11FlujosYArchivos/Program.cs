@@ -7,10 +7,7 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            string origenArchivo = "prueba.txt";
-            string destinoArchivo = @"C:\Users\REDACTED\Desktop\prueba.txt";
-
-            File.Move(origenArchivo, destinoArchivo);
+            File.Delete(@"C:\Users\REDACTED\Desktop\prueba.txt");
         }
     }
 }
