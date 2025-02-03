@@ -11,12 +11,12 @@ namespace _11FlujosYArchivos
             string[] nombresArchivos;
 
             // Buscamos archivos en la ruta del proyecto y asignamos la devolución a la matriz de string
-            nombresArchivos = Directory.GetFiles(@"C:\Users\fredd\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0");
+            nombresArchivos = Directory.GetFiles(@"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0");
 
             // Recorremos a la matriz y mostramos sus elementos
             foreach (string item in nombresArchivos)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(Path.GetFileName(item));
             }
         }
     }
