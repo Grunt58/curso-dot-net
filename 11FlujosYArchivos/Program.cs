@@ -8,23 +8,19 @@ namespace _11FlujosYArchivos
         static void Main(string[] args)
         {
             // Creando un flujo de archivo
-            FileStream fs = new FileStream("mi_primer_archivo.txt", FileMode.Create);
+            FileStream fs = new FileStream("contraseña.txt", FileMode.Open);
 
-            // Indicando que el archivo se ha creado
-            Console.WriteLine("Archivo creado con exito");
+            // buffer para almacenar los bytes contenidos en el archivo
+            byte[] bufferLeerDatosArchivo = new byte[1024];
 
-            // Cadena para guardar la información que será escrita en el archivo txt
-            string textoParaArchivo = "Texto de prueba para el archivo";
+            // Leemos los bytes que contiene el archivo
+            fs.Read(bufferLeerDatosArchivo, 0, bufferLeerDatosArchivo.Length);
 
-            // Matriz de bytes para almacenar la cadena
-            byte[] bufferCadenaABytes;
+            // Descodificamos la matriz de bytes leída para convertirla en un string
+            string cadenaDescodificada = Encoding.UTF8.GetString(bufferLeerDatosArchivo);
 
-            // Codificamos la cadena
-            bufferCadenaABytes = Encoding.UTF8.GetBytes(textoParaArchivo);
-
-            // Escribimos a la cadena codificada en nuestro archivo de texto
-            fs.Write(bufferCadenaABytes, 0, bufferCadenaABytes.Length);
-            fs.Close();
+            // Mostramos la cadena descodificada (la información del archivo)
+            Console.WriteLine($"Información obtenida del archivo: \"{cadenaDescodificada}\"");
         }
     }
 }
