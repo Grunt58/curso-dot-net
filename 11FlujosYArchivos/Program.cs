@@ -7,10 +7,10 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            string origenArchivo = "contraseña.txt";
-            string destinoArchivo = @"C:\Users\REDACTED\Desktop\contraseña.txt";
+            string origenArchivo = "prueba.txt";
+            string destinoArchivo = @"C:\Users\REDACTED\Desktop\prueba.txt";
 
-            File.Copy(origenArchivo, destinoArchivo, true);
+            File.Move(origenArchivo, destinoArchivo);
         }
     }
 }
