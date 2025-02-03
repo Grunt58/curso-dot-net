@@ -7,17 +7,17 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            // Cadena con la ruta completa
-            string rutaInicial = @"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0\contraseña.txt";
+            // Cadena con la ruta
+            string ruta = @"C:\Users\REDACTED\Desktop\Prueba";
 
-            // El método quita el útlimo elementto de la ruta y lo almacena en la variable string
-            string rutaSinUltimoElemento = Path.GetDirectoryName(rutaInicial);
+            // Llamamos al método y le asignamos la devolución a una matriz de string
+            string[] archivosDirectorios = Directory.GetFileSystemEntries(ruta, "Doc?.txt");
 
-            // Mostramos la cadena devuelta por el método
-            Console.WriteLine(rutaSinUltimoElemento);
-
-            // Llamo al método mandándole la última cadena que me devolvió
-            Console.WriteLine(Path.GetDirectoryName(rutaSinUltimoElemento));
+            // Recorremos la matriz y mostramos sus elementos
+            foreach (string item in archivosDirectorios)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
