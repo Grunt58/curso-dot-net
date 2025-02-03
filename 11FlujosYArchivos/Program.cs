@@ -7,18 +7,15 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            // Variable para almacenar la contraseña
-            string contraseñaArchivo;
-
-            // Instanciamos a SW para crear un flujo y poder leer el contenido del archivo
-            using (StreamReader sr = new StreamReader("contraseña.txt"))
+            // Creamos un flujo/stream para trabajar con la memoria RAM
+            using (MemoryStream ms1 = new MemoryStream())
             {
-                // Asignamos la devolución de ReadLine a nuestro string
-                contraseñaArchivo = sr.ReadLine();
-            }
+                // Codificamos a cadena1 para obtener una secuencia de bytes
+                byte[] matrizCadenaByte = Encoding.UTF8.GetBytes("Texto para el stream");
 
-            // Mostramos la información del archivo
-            Console.WriteLine($"Contraseña: {contraseñaArchivo}");
+                // Escribiendo datos en el flujo
+                ms1.Write(matrizCadenaByte, 0, matrizCadenaByte.Length);
+            }
         }
     }
 }
