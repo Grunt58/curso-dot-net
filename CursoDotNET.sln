@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08LasCadenas", "08LasCadena
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10EstructurasYEnumeraciones", "10EstructurasYEnumeraciones\10EstructurasYEnumeraciones.csproj", "{984B193D-5AE4-441D-9CCE-86E3FCFB6AC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11FlujosYArchivos", "11FlujosYArchivos\11FlujosYArchivos.csproj", "{E6562DD9-89D7-4EA8-8BD8-CAC3E96154B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{984B193D-5AE4-441D-9CCE-86E3FCFB6AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{984B193D-5AE4-441D-9CCE-86E3FCFB6AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{984B193D-5AE4-441D-9CCE-86E3FCFB6AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6562DD9-89D7-4EA8-8BD8-CAC3E96154B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6562DD9-89D7-4EA8-8BD8-CAC3E96154B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6562DD9-89D7-4EA8-8BD8-CAC3E96154B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6562DD9-89D7-4EA8-8BD8-CAC3E96154B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,13 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            File.Delete(@"C:\Users\REDACTED\Desktop\prueba.txt");
+            // Creamos nuestro primer directorio
+            DirectoryInfo directoryInfo = Directory.CreateDirectory("Mi cuarta carpeta");
+
+            // Mostramos información del directorio creado, a traves del objeto DirectoryInfo y sus propiedades
+            Console.WriteLine($"Nombre: {directoryInfo.Name}");
+            Console.WriteLine($"Ruta absoluta: {directoryInfo.FullName}");
+            Console.WriteLine($"Fecha de creación: {directoryInfo.CreationTime}");
         }
     }
 }
