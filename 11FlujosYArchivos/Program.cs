@@ -7,17 +7,17 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            // Matriz para almacenar los nombre de archivos
-            string[] nombresSubdirectorios;
+            // Cadena con la ruta completa
+            string rutaInicial = @"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0\contraseña.txt";
 
-            // Buscamos archivos en la ruta del proyecto y asignamos la devolución a la matriz de string
-            nombresSubdirectorios = Directory.GetDirectories(@"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0");
+            // El método quita el útlimo elementto de la ruta y lo almacena en la variable string
+            string rutaSinUltimoElemento = Path.GetDirectoryName(rutaInicial);
 
-            // Recorremos a la matriz y mostramos sus elementos
-            foreach (string item in nombresSubdirectorios)
-            {
-                Console.WriteLine(Path.GetFileName(item));
-            }
+            // Mostramos la cadena devuelta por el método
+            Console.WriteLine(rutaSinUltimoElemento);
+
+            // Llamo al método mandándole la última cadena que me devolvió
+            Console.WriteLine(Path.GetDirectoryName(rutaSinUltimoElemento));
         }
     }
 }
