@@ -7,14 +7,22 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            // Cadena con la ruta
-            string ruta = @"C:\Users\REDACTED\Desktop\Prueba\Subcarpeta1";
+            // String que contiene el nombre de la ruta base
+            string rutaBase = @"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0";
 
-            // Llamamos al método y le asignamos la extensión al string
-            string extension = Path.GetExtension(ruta);
+            // String para almacenar la cadena ya concatendada
+            string rutaCompleta;
 
-            // Mostramos la extensión
-            Console.WriteLine($"La extensión del archivo es: {extension}");            
+            // Pedimos el nombre del directorio que queremos crear
+            Console.Write("Ingresa el nombre del directorio a crear: ");
+            string nombreDirectorio = Console.ReadLine();
+
+            // Concatenamos los nombres
+            rutaCompleta = Path.Combine(rutaBase, nombreDirectorio);
+
+            // Creamos el directorio y le mostramos al usuario la ruta donde fue creado
+            Directory.CreateDirectory(rutaCompleta);
+            Console.WriteLine($"El directorio se creó en: {rutaCompleta}");
         }
     }
 }
