@@ -7,14 +7,10 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            if (File.Exists("contraseña.txt"))
-            {
-                Console.WriteLine("Archivo encotrado!");
-            }
-            else
-            {
-                Console.WriteLine("No se encontró el archivo");
-            }
+            string origenArchivo = "contraseña.txt";
+            string destinoArchivo = @"C:\Users\REDACTED\Desktop\contraseña.txt";
+
+            File.Copy(origenArchivo, destinoArchivo, true);
         }
     }
 }
