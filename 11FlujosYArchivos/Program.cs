@@ -7,17 +7,20 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            //// Creamos un objeto FileStream
-            //FileStream fs;
+            // Creamos un archivo
+            FileStream fs = File.Create("Archivo con file.txt");
 
-            //// Creamos un archivo
-            //fs = File.Create("Archivo con file.txt");
+            // Codificamos una cadena para escribirla en el archivo
+            byte[] buffer = Encoding.UTF8.GetBytes("Prueba de texto");
 
-            //// Cerramos el flujo de Create
-            //fs.Close();
+            // Escribirmos en el archivo
+            fs.Write(buffer, 0, buffer.Length);
 
-            // Escribimos en el archivo
-            File.WriteAllText("Archivo con file.txt", "Prueba de que se escribió en el archivo");
+            // Cerramos el flujo de Create
+            fs.Close();
+
+            // Escribimos/anexamos texto a nuesto archivo
+            File.AppendAllText("Archivo con file.txt", "Texto anexado");
         }
     }
 }
