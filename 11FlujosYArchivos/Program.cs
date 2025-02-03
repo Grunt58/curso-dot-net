@@ -8,13 +8,13 @@ namespace _11FlujosYArchivos
         static void Main(string[] args)
         {
             // Matriz para almacenar los nombre de archivos
-            string[] nombresArchivos;
+            string[] nombresSubdirectorios;
 
             // Buscamos archivos en la ruta del proyecto y asignamos la devolución a la matriz de string
-            nombresArchivos = Directory.GetFiles(@"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0");
+            nombresSubdirectorios = Directory.GetDirectories(@"C:\Users\REDACTED\Documents\CursoDotNET\11FlujosYArchivos\bin\Debug\net9.0");
 
             // Recorremos a la matriz y mostramos sus elementos
-            foreach (string item in nombresArchivos)
+            foreach (string item in nombresSubdirectorios)
             {
                 Console.WriteLine(Path.GetFileName(item));
             }
