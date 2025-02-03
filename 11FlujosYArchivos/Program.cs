@@ -8,16 +8,13 @@ namespace _11FlujosYArchivos
         static void Main(string[] args)
         {
             // Cadena con la ruta
-            string ruta = @"C:\Users\REDACTED\Desktop\Prueba";
+            string ruta = @"C:\Users\REDACTED\Desktop\Prueba\Subcarpeta1";
 
-            // Llamamos al método y le asignamos la devolución a una matriz de string
-            string[] archivosDirectorios = Directory.GetFileSystemEntries(ruta, "Doc?.txt");
+            // Llamamos al método y le asignamos la extensión al string
+            string extension = Path.GetExtension(ruta);
 
-            // Recorremos la matriz y mostramos sus elementos
-            foreach (string item in archivosDirectorios)
-            {
-                Console.WriteLine(item);
-            }
+            // Mostramos la extensión
+            Console.WriteLine($"La extensión del archivo es: {extension}");            
         }
     }
 }
