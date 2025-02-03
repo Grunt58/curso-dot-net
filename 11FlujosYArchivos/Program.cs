@@ -7,11 +7,17 @@ namespace _11FlujosYArchivos
     {
         static void Main(string[] args)
         {
-            // Creamos un objeto FileStream
-            FileStream fs;
+            //// Creamos un objeto FileStream
+            //FileStream fs;
 
-            // Creamos un archivo
-            fs = File.Create("Archivo con file.txt");
+            //// Creamos un archivo
+            //fs = File.Create("Archivo con file.txt");
+
+            //// Cerramos el flujo de Create
+            //fs.Close();
+
+            // Escribimos en el archivo
+            File.WriteAllText("Archivo con file.txt", "Prueba de que se escribió en el archivo");
         }
     }
 }
