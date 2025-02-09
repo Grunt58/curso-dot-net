@@ -10,57 +10,21 @@
 
         static void Main(string[] args)
         {
-            int opcion;
+            // Variables
+            int num1 = 10, num2 = 5, resultado;
 
-            do
+            try
             {
-                // Menú
-                Console.WriteLine("1. Suma");
-                Console.WriteLine("2. Resta");
-
-                Console.Write("Escoge una opción: ");
-                try
-                {
-                    // Código que puede generar una excepción (se intentará ejecutar)
-                    opcion = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (FormatException e)
-                {
-                    // Código para controlar la excepción de TipoDeExcepcion
-                    Console.WriteLine("¡Solo es posible ingrear el número 1 o 2!");
-                    opcion = 5;
-                }
-                catch (OverflowException e)
-                {
-                    // Código para controlar la excepción de OverflowException
-                    Console.WriteLine($"El número es muy grande o pequeño ¡Sólo es posible ingresar el número 1 o 2!");
-
-                    // Asignamos un valor a la variable "opcion" porque "try" no pudo hacerlo
-                    opcion = 5;
-                }
-                catch (Exception e)
-                {
-                    // Código para controlar las expeciones que puedan salir
-                    Console.WriteLine($"¡Algo ha salido mal, recuerda que sólo es posible ingresar el número 1 o 2!");
-
-                    // Asignamos un valor a la variable "opcion" porque "try" no pudo hacerlo
-                    opcion = 5;
-                }
-
-            } while (opcion < 1 || opcion > 2); 
-
-
-            switch (opcion)
+                //Realizamos la división
+                resultado = num1 / num2;
+            }
+            catch (DivideByZeroException e)
             {
-                case 1:
-                    Console.WriteLine("Sumar");
-                    break;
-                case 2:
-                    Console.WriteLine("Restar");
-                    break;
-                default:
-                    Console.WriteLine("El número ingresado no es válido");
-                    break;
+                Console.WriteLine("No es posible dividir entre cero");
+            }
+            finally
+            {
+                Console.WriteLine("Operación finalizada.");
             }
         }
     }
