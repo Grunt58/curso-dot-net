@@ -38,6 +38,14 @@
                     // Asignamos un valor a la variable "opcion" porque "try" no pudo hacerlo
                     opcion = 5;
                 }
+                catch (Exception e)
+                {
+                    // Código para controlar las expeciones que puedan salir
+                    Console.WriteLine($"¡Algo ha salido mal, recuerda que sólo es posible ingresar el número 1 o 2!");
+
+                    // Asignamos un valor a la variable "opcion" porque "try" no pudo hacerlo
+                    opcion = 5;
+                }
 
             } while (opcion < 1 || opcion > 2); 
 
