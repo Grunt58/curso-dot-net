@@ -30,6 +30,14 @@
                     Console.WriteLine("¡Solo es posible ingrear el número 1 o 2!");
                     opcion = 5;
                 }
+                catch (OverflowException e)
+                {
+                    // Código para controlar la excepción de OverflowException
+                    Console.WriteLine($"El número es muy grande o pequeño ¡Sólo es posible ingresar el número 1 o 2!");
+
+                    // Asignamos un valor a la variable "opcion" porque "try" no pudo hacerlo
+                    opcion = 5;
+                }
 
             } while (opcion < 1 || opcion > 2); 
 
