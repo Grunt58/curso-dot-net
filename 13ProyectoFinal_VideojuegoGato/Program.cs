@@ -10,7 +10,33 @@
 
         static void Main(string[] args)
         {
+            // Dibujamos al tablero inicial
+            DibujarTablero();
+            Console.WriteLine("Jugador 1 = O\nJugador 2 = X");
 
+        } // Cierre de Main
+
+        static void DibujarTablero()
+        {
+            // Variables de conteo del ciclo
+            int fila = 0;
+            int columna = 0;
+
+            Console.WriteLine(); // Espacio antes de dibujar el tablero
+            Console.WriteLine("-------------"); // Dibujar el tablero línea horiozontal
+
+            for(fila = 0; fila < 3; fila++)
+            {
+                Console.Write("|"); // Dibujar la primera línea vertical
+
+                for(columna = 0; columna < 3; columna++)
+                {
+                    // Asigna un: Espacio, O, X según corresponda
+                    Console.Write($" {simbolo[tablero[fila, columna]]} |");
+                }
+                Console.WriteLine();
+                Console.WriteLine("-------------"); // Dibujala primer linea horizontal
+            }
         }
     }
 }
