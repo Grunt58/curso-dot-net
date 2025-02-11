@@ -72,5 +72,52 @@
             // Si todo es correcto, se le asigna al jugador correspondiente
             tablero[fila - 1, columna - 1] = jugador;
         }
+
+        // Devuelve un "true" si hay un 3 en línea
+        static bool ComprobarGanador()
+        {
+            int fila = 0;
+            int columna = 0;
+            bool ticTacToe = false;
+
+            // Si en alguna fila todas las casillas so iguales y no están vacías
+            for (fila = 0; fila < 3; fila++)
+            {
+                if (   (tablero[fila, 0] == tablero[fila, 1])
+                    && (tablero[fila, 0] == tablero[fila, 2])
+                    && (tablero[fila, 0] != 0))
+                {
+                    ticTacToe = true;
+                }
+            }
+
+            // Si en alguna columna todas las casillas son iguales y no están vacías
+            for (columna = 0; columna < 3; columna++) 
+            {
+                if (   (tablero[0, columna] == tablero[1, columna])
+                    && (tablero[0, columna] == tablero[2, columna])
+                    && (tablero[0, columna] != 0))
+                {
+                    ticTacToe = true;
+                }
+            }
+
+            // Si en alguna diagonal todas las casillas son iguales y no están vacías
+            if (   (tablero[0, 0] == tablero[1, 1])
+                && (tablero[0, 0] == tablero[2, 2])
+                && (tablero[0, 0] != 0))
+            {
+                ticTacToe = true;
+            }
+
+            if (   (tablero[0, 2] == tablero[1, 1])
+                && (tablero[0, 2] == tablero[2, 0])
+                && (tablero[0, 2] != 0))
+            {
+                ticTacToe = true;
+            }
+
+            return ticTacToe;
+        }
     }
 }
