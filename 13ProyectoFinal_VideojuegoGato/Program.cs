@@ -119,5 +119,28 @@
 
             return ticTacToe;
         }
+
+        // Devuelve "true" si hay empate
+        static bool ComprobarEmpate()
+        {
+            bool hayEspacio = false;
+            int fila = 0;
+            int columna = 0;
+
+            for (fila = 0; fila < 3; fila++)
+            {
+                for (columna = 0; columna < 3; columna++)
+                {
+                    // Si encuentra una sola casilla vacía, quiere decir que aún se puede seguir jugando
+                    if (tablero[fila, columna] == 0)
+                    {
+                        hayEspacio = true;
+                    }
+                }
+            }
+
+            // Si el ciclo anterior nos regresa un "true", indicandonos que si hay espacios, entonces se tiene que regresar una negación de true para que la condición de empate no se cumpla en la funación Main()
+            return !hayEspacio;
+        }
     }
 }
