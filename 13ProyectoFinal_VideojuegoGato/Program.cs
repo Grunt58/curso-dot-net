@@ -10,10 +10,53 @@
 
         static void Main(string[] args)
         {
+            // Indica si el juego ha terminado
+            bool terminado = false;
+
             // Dibujamos al tablero inicial
             DibujarTablero();
             Console.WriteLine("Jugador 1 = O\nJugador 2 = X");
 
+            do // Usamos un ciclo do-while porque desconocemos el número de veces que se tiene que llevar a cabo
+            {
+                // Turno jugador 1
+                PreguntarPosicion(1); // Envía el valor de "1" a la función PreguntarPosición
+
+                // Dibujar la casilla del jugador 1
+                DibujarTablero();
+
+                // Comprobar si ha ganado la partida el Jugador 1
+                terminado = ComprobarGanador();
+                if (terminado = true)
+                {
+                    Console.WriteLine("¡El jugador 1 ha ganado!");
+                }
+                else // De lo contrario comprobamos si hubo un empate
+                {
+                    terminado = ComprobarGanador();
+                    if (terminado == true)
+                    {
+                        Console.WriteLine("¡Esto es un empate!");
+                    }
+
+                    // Si jugador 1 no ganó, ni hubo empate, entonces es turno del Jugador 2
+                    else
+                    {
+                        // Turno del Jugador 2
+                        PreguntarPosicion(2);
+                        // Dibujar la casilla del Jugador 2
+                        DibujarTablero();
+                        // Comprobar si ha ganado la partida el Jugador 2
+                        terminado = ComprobarGanador();
+
+                        if (terminado == true)
+                        {
+                            Console.WriteLine("¡EL Jugador 2 ha ganado!");
+                        }
+                    }
+                }
+                // Repetir hasta 3 en línea o empate (tablero lleno)
+            } while (terminado == false); // Mientras el juego no haya terminado, es decir, mientras la variable sea igual a false, se seguirá repitiendo el ciclo
         } // Cierre de Main
 
         static void DibujarTablero()
